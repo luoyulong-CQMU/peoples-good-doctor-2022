@@ -3,7 +3,9 @@
 # 按 Shift+F10 执行或将其替换为您的代码。
 # 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
 import time
+
 import requests
+
 
 # 按间距中的绿色按钮以运行脚本。
 
@@ -13,16 +15,9 @@ def start(class_id,seconds,user_id,cookies):
         'JSESSIONID': f'{cookies}',
     }
     headers = {
-        'Connection': 'keep-alive',
-        'Accept': 'application/json, text/javascript, */*; q=0.01',
-        '_action': 'do',
-        'X-Requested-With': 'XMLHttpRequest',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62',
-        'DNT': '1',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         'Origin': 'http://ycx-vod1.people-health.cn',
         'Referer': f'http://ycx-vod1.people-health.cn/video/play?videoId={class_id}&userId={user_id}&notifyUrl=http://train.people-health.cn/course/train/callback/5777048218894336',
-        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
     }
     for i in range(0,total,60):
         data = {
